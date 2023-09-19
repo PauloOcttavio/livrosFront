@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AtualizarNutricionista } from "../services/put"
+import { atualizarUsuario } from "../services/put"
 import {Form,Button,Container,Col} from "react-bootstrap"
 import {useForm} from "react-hook-form"
 export function Update(){
@@ -7,7 +7,7 @@ export function Update(){
     const [id, setId] = useState([])
     const onSubmit = async(data)=>{
         console.log(data)
-       const criar = await AtualizarNutricionista(id,data)
+       const criar = await atualizarUsuario(id,data)
     }
     return(
         <Container>
@@ -39,13 +39,35 @@ export function Update(){
                     ></input>
                     <input 
                     className="mt-3"
-                        type="text"
-                        name="crn"
-                        id="crn"
+                        type="password"
+                        name="senha"
+                        id="senha"
                         required
-                        placeholder="Insira o crn do usuario"
-                        {...register('crn', {
-                            required: 'crn é obrigatório'
+                        placeholder="Insira a senha do usuario"
+                        {...register('senha', {
+                            required: 'senha é obrigatório'
+                        })}
+                    ></input>
+                    <input 
+                    className="mt-3"
+                        type="text"
+                        name="email"
+                        id="email"
+                        required
+                        placeholder="Insira o email"
+                        {...register('email', {
+                            required: 'email é obrigatório'
+                        })}
+                    ></input>
+                    <input 
+                    className="mt-3"
+                        type="text"
+                        name="telefone"
+                        id="telefone"
+                        required
+                        placeholder="Insira a telefone do usuario"
+                        {...register('telefone', {
+                            required: 'telefone é obrigatório'
                         })}
                     ></input>
                     <Button type="submit" className="mt-3">Cadastrar</Button>

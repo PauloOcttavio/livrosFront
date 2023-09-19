@@ -3,10 +3,10 @@ import { Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 
 
-export function Listagem(){
+export function ListagemLivros(){
     const [list, setList] = useState([])
     const read = async()=>{
-        const resposta =await axios.get('http://localhost:8080/usuario')
+        const resposta =await axios.get('http://localhost:8080/livro')
         console.log(resposta.data)
         setList(resposta.data)
     }  
