@@ -1,13 +1,14 @@
 import { useState } from "react"
-import { atualizarUsuario } from "../services/put"
+import { PutUsuario, atualizarUsuario } from "../services/put"
 import {Form,Button,Container,Col} from "react-bootstrap"
 import {useForm} from "react-hook-form"
+import { UpdateLivros } from "./UpdateLivros"
 export function Update(){
     const {register,handleSubmit,formState: {errors}} = useForm()
     const [id, setId] = useState([])
     const onSubmit = async(data)=>{
         console.log(data)
-       const criar = await atualizarUsuario(id,data)
+       const criar = await PutUsuario(id,data)
     }
     return(
         <Container>

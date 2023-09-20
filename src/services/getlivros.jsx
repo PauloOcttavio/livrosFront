@@ -1,5 +1,5 @@
 import { api } from "./api";
 
-export function listarLivros(){
+export function GetLivro(){
     const resposta = api.get('/usuario')
 }

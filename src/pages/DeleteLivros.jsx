@@ -4,9 +4,8 @@ import { deletarLivros } from "../services/deletelivros"
 export function DeleteLivros() {
     const [id,setId] = useState("1")
     const onSubmit= async()=>{
-        const delet = await deletarLivros(id)
+        const delet = await DeleteLivros(id)
     }
-    
     return(
         <div className="container display:flex:column">
             <Col>

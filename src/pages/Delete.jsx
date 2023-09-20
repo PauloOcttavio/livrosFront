@@ -1,10 +1,10 @@
 import { Button,Form } from "react-bootstrap"
-import { deletarUsuario } from "../services/delete"
+import { DeletarUsuario, deletarUsuario } from "../services/delete"
 import { useState } from "react"
 export function Delete() {
     const [id,setId] = useState("1")
     const onSubmit= async()=>{
-        const delet = await deletarUsuario(id)
+        const delet = await DeletarUsuario(id)
     }
     
     return(

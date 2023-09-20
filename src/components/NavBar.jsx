@@ -1,43 +1,35 @@
-import {LinkContainer } from "react-router-bootstrap"
-import Button from "react-bootstrap/Button";
-import { Outlet } from "react-router-dom";
-
-
-const NavBar= () => {
-    return(
-        <>
-        <div >
-            <nav className=" bg-primary container-fluid">
-            <ul>
-                <LinkContainer to='/criacao'>
-                <Button>Criação</Button>
-                </LinkContainer>
-                <LinkContainer  to="/listagem">
-                    <Button>Listagem</Button>
-                </LinkContainer>
-                <LinkContainer to="/atualizar">
-                    <Button>Atualização</Button>
-                </LinkContainer>
-                <LinkContainer to="/deletar">
-                    <Button>Deletar</Button>
-                </LinkContainer>
-                <LinkContainer to='/criacaolivros'>
-                <Button>CriaçãoLivros</Button>
-                </LinkContainer>
-                <LinkContainer  to="/listagemlivros">
-                    <Button>ListagemLivros</Button>
-                </LinkContainer>
-                <LinkContainer to="/atualizarlivros">
-                    <Button>AtualizaçãoLivros</Button>
-                </LinkContainer>
-                <LinkContainer to="/deletarlivros">
-                    <Button>DeletarLivros</Button>
-                </LinkContainer>
-            </ul>
-            </nav>
-            <Outlet/>
-        </div>
-        </>
-    )
+import React from "react";
+import { Button, Nav } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from "react-router-dom";
+const PortalNavbar = () => {
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.clear();
+        navigate('/auth/authhome');
+    }
+    const login = () => {
+        localStorage.clear();
+        navigate('/auth/login');
+    }
+    return (
+        <React.Fragment>
+            <Navbar bg="info" expand="lg" className="navbar-dark">
+                <Container>
+                    <Navbar.Brand>Registro Livros P.O</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ms-auto">
+                            <Nav.Link>
+                                <Button variant="link" className="link-light link-underline-opacity-0" onClick={logout}>home</Button>
+                                <Button className="btn-light" onClick={login}>Log in</Button>
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </React.Fragment>
+    );
 }
-export  {NavBar}
+export default PortalNavbar;

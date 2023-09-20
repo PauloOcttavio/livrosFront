@@ -1,13 +1,13 @@
 
 import {Form,Button,Container,Col} from "react-bootstrap"
 import {useForm} from "react-hook-form"
-import { criarLivros } from "../services/postlivros";
+import { PostLivro, criarLivros } from "../services/postlivros";
 export function CreateLivros(){
     const {register,handleSubmit,formState: {errors}} = useForm()
     
     const onSubmit = async(data)=>{
         console.log(data)
-       const criar = await criarLivros(data)
+       const criar = await PostLivro(data)
         
     }
     return(
