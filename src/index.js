@@ -15,7 +15,7 @@ import { UpdateLivros } from './pages/UpdateLivros';
 import { DeleteLivros } from './pages/DeleteLivros';
 import { Listagem } from './pages/List';
 import { Update } from './pages/Update';
-import { DeletarUsuario } from './services/delete';
+import { Delete } from './pages/Delete';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -32,17 +32,19 @@ root.render(
                 <ProtectedRoute>
                     <Home />
                 </ProtectedRoute>
+                
             } />
+        <Route path="createlivro" element={<CreateLivros/>}></Route>
+        <Route path="getlivro" element={<ListagemLivros/>}></Route>
+        <Route path="putlivro" element={<UpdateLivros/>}></Route>
+        <Route path="deletelivro" element={<DeleteLivros/>}></Route>
+        <Route path="createusuario" element={<Create/>}></Route>
+        <Route path="getusuario" element={<Listagem/>}></Route>
+        <Route path="putusuario" element={<Update/>}></Route>
+        <Route path="deleteusuario" element={<Delete/>}></Route>
         </Route>
         
-        <Route path="/createlivro" element={<CreateLivros/>}></Route>
-        <Route path="/getlivro" element={<ListagemLivros/>}></Route>
-        <Route path="/putlivro" element={<UpdateLivros/>}></Route>
-        <Route path="/deletelivro" element={<DeleteLivros/>}></Route>
-        <Route path="/createusuario" element={<Create/>}></Route>
-        <Route path="/getusuario" element={<Listagem/>}></Route>
-        <Route path="/putusuario" element={<Update/>}></Route>
-        <Route path="/deleteusuario" element={<DeletarUsuario/>}></Route>
+        
         
     </Routes>
 </BrowserRouter>
