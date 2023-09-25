@@ -46,7 +46,7 @@ const Login = () => {
                             required: 'senha é obrigatório'
                         })}
                     ></input>
-                    <Button type="submit">Cadastrar</Button>
+                    <Button type="submit">Fazer log in</Button>
             </Form>
            
         </Container>
