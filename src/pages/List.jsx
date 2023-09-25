@@ -14,14 +14,15 @@ export function Listagem(){
     useEffect(()=>{read()},[])
     return(
         <>
-        <Container onClick={read}><Button>Listagem</Button></Container >
-        <Container variant="primary">
-            
         
-        <ul>
-          {list.map((lists)=>(<li key={lists.id}>{lists.nome}</li>))}
-        </ul>
-      
+        <Container className="bg-light rounded p-5 shadow w-50  m-auto mt-3">
+          <Button onClick={read}>Listagem de usuarios</Button>  
+                <ul>
+
+                  {list.map((lists)=>(<Container className='bg-secondary-bg mt-2'><li key={lists.id}>{lists.nome}</li></Container>))}
+                  
+                </ul>
+            
         </Container>
         </>
     )

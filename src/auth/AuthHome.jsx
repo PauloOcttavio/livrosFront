@@ -1,5 +1,9 @@
+import { Container } from "react-bootstrap";
+
 export default function AuthHome(){
     return(
-        <div>Hello there</div>
+        <Container className="text-center">
+            <h1>Bem vindo a registro livros P.O</h1>
+        </Container>
     )
 }

@@ -47,7 +47,7 @@ const PortalNavbar = () => {
         <React.Fragment>
             <Navbar bg="info" expand="lg">
                 <Container>
-                    <Navbar.Brand>Registro livros P.O</Navbar.Brand>
+                    <Navbar.Brand className="text-light">Registro livros P.O</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">

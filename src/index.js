@@ -24,8 +24,8 @@ root.render(
     <BrowserRouter basename={'/'}>
     <Routes>
         <Route path='/auth' element={<Auth />}>
-            <Route path='login' element={<Login />} />
             <Route path='authhome' element={<AuthHome />} />
+            <Route path='login' element={<Login />} />
         </Route>
         <Route path="/" element={<App />}>
             <Route path='' element={

@@ -23,10 +23,9 @@ const Login = () => {
             })
     }
     return(
-        <Container>
+        <Container className="display:flex-column align">
             <Form noValidate validated={!!errors} onSubmit={handleSubmit(onSubmit)}
-                className="bg-light rounded p-5 shadow w-50 m-auto">
-                <Col>
+                className="bg-light rounded p-5 shadow w-50  m-auto mt-3">
                     <input 
                         type="text"
                         name="nome"
@@ -48,7 +47,6 @@ const Login = () => {
                         })}
                     ></input>
                     <Button type="submit">Cadastrar</Button>
-                </Col>
             </Form>
            
         </Container>

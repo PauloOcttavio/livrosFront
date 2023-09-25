@@ -6,9 +6,13 @@ export function CreateLivros(){
     const {register,handleSubmit,formState: {errors}} = useForm()
     
     const onSubmit = async(data)=>{
-        console.log(data)
+        console.log(data);
+        const image = data.imagem; 
+        let reader = new FileReader();
+        reader.readAsText(image[0]);
+        data.imagem =reader.result
+        console.log(reader.result)
        const criar = await PostLivro(data)
-        
     }
     return(
         <Container>
@@ -26,14 +30,12 @@ export function CreateLivros(){
                         })}
                     ></input>
                     <input 
-                        type="file"
-                        name="imagem"
-                        id="imagem"
+                        type="text"
+                        name="autor"
+                        id="autor"
                         required
-                        placeholder="Insira a imagem usuario"
-                        {...register('imagem', {
-                            required: 'imagem é obrigatório'
-                        })}
+                        placeholder="Insira o autor do livro"
+                        {...register('autor')}
                     ></input>
                     <input 
                     className="mt-3"

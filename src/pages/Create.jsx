@@ -12,9 +12,10 @@ export function Create(){
     return(
         <Container>
             <Form noValidate validated={!!errors} onSubmit={handleSubmit(onSubmit)}
-                className="bg-light rounded p-5 shadow w-50 m-auto">
+                className="bg-light rounded p-5 shadow w-50 m-auto mt-3">
                 <Col>
                     <input 
+                        className="mt-3"
                         type="text"
                         name="nome"
                         id="nome"
@@ -25,6 +26,7 @@ export function Create(){
                         })}
                     ></input>
                     <input 
+                        className="mt-3"
                         type="password"
                         name="senha"
                         id="senha"
