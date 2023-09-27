@@ -1,25 +1,22 @@
 
 import {Form,Button,Container,Col} from "react-bootstrap"
 import {useForm} from "react-hook-form"
-import { PostLivro, criarLivros } from "../services/postlivros";
+import { PostAutor, PostLivro } from "../services/postlivros";
 export function CreateLivros(){
     const {register,handleSubmit,formState: {errors}} = useForm()
     
     const onSubmit = async(data)=>{
-        console.log(data);
-        const image = data.imagem; 
-        let reader = new FileReader();
-        reader.readAsText(image[0]);
-        data.imagem =reader.result
-        console.log(reader.result)
        const criar = await PostLivro(data)
+       const autor = await PostAutor(data)
+       const autorfk = await PostAutor(criar.data)
     }
     return(
         <Container>
             <Form noValidate validated={!!errors} onSubmit={handleSubmit(onSubmit)}
                 className="bg-light rounded p-5 shadow w-50 m-auto">
                 <Col>
-                    <input 
+                    <input
+                        className="mt-3" 
                         type="text"
                         name="nome"
                         id="nome"
@@ -29,7 +26,19 @@ export function CreateLivros(){
                             required: 'Nome é obrigatório'
                         })}
                     ></input>
+                    <input
+                        className="mt-3" 
+                        type="file"
+                        name="imagem"
+                        id="imagem"
+                        required
+                        placeholder="Insira a imagem do livro"
+                        {...register('imagem', {
+                            required: 'imagem é obrigatória'
+                        })}
+                    ></input>
                     <input 
+                        className="mt-3"
                         type="text"
                         name="autor"
                         id="autor"

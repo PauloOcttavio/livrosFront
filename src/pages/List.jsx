@@ -19,7 +19,7 @@ export function Listagem(){
           <Button onClick={read}>Listagem de usuarios</Button>  
                 <ul>
 
-                  {list.map((lists)=>(<Container className='bg-secondary-bg mt-2'><li key={lists.id}>{lists.nome}</li></Container>))}
+                  {list.map((lists)=>(<Container className='bg-secondary-bg mt-2'><ul className='list-unstyled'><li key={lists.id}>{lists.nome}</li></ul></Container>))}
                   
                 </ul>
             

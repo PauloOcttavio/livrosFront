@@ -9,7 +9,11 @@ const PortalNavbar = () => {
     const navigate = useNavigate();
     const logout = () => {
         localStorage.clear();
-        navigate('/auth/authhome');
+        navigate('/auth/authhome    ');
+    }
+    const home = () => {
+        localStorage.clear();
+        navigate('/home    ');
     }
     const create = () => {
         localStorage.clear();
@@ -51,6 +55,12 @@ const PortalNavbar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
+                        <Nav.Link>
+                            <Button className="btn-info text-light" onClick={home}>Home</Button>
+                        </Nav.Link>
+                            <Nav.Link>
+                                <Button className="btn-info text-light">Dashboard</Button>
+                            </Nav.Link>
                             <Nav.Link>
                             <Dropdown>
                               <Dropdown.Toggle variant="info" id="dropdown-basic" className="text-light">

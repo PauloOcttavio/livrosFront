@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import "./index.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './auth/Login';
@@ -34,6 +35,7 @@ root.render(
                 </ProtectedRoute>
                 
             } />
+        <Route path="home" element={<Home/>}></Route>
         <Route path="createlivro" element={<CreateLivros/>}></Route>
         <Route path="getlivro" element={<ListagemLivros/>}></Route>
         <Route path="putlivro" element={<UpdateLivros/>}></Route>

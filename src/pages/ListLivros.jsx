@@ -8,7 +8,7 @@ export function ListagemLivros(){
     const read = async()=>{
 
         const resposta =await axios.get('http://localhost:8080/livro')
-        console.log(resposta.data)
+        setList(resposta.data)
         
     }  
 
@@ -18,7 +18,7 @@ export function ListagemLivros(){
         <Container className="bg-light rounded p-5 shadow w-50  m-auto mt-3">
           <Button onClick={read}>Listagem Livros</Button>  
             <ul>
-              {list.map((lists)=>(<Container className='bg-secondary-bg mt-2'><li key={lists.id}>{lists.nome}</li></Container>))}
+              {list.map((lists)=>(<Container className='bg-secondary-bg mt-2'><ul className='list-unstyled'><li key={lists.id}>{lists.nome}</li></ul></Container>))}
               
             </ul>
             
