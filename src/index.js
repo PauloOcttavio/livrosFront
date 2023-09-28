@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./index.css"
+import "reactjs-popup/dist/index.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './auth/Login';
@@ -9,7 +10,6 @@ import AuthHome from './auth/AuthHome';
 import App from './App';
 import ProtectedRoute from './util/ProtectedRoute';
 import Home from './pages/Home';
-import { Create } from './pages/Create';
 import { CreateLivros } from './pages/CreateLivros';
 import { ListagemLivros } from './pages/ListLivros';
 import { UpdateLivros } from './pages/UpdateLivros';
@@ -40,7 +40,6 @@ root.render(
         <Route path="getlivro" element={<ListagemLivros/>}></Route>
         <Route path="putlivro" element={<UpdateLivros/>}></Route>
         <Route path="deletelivro" element={<DeleteLivros/>}></Route>
-        <Route path="createusuario" element={<Create/>}></Route>
         <Route path="getusuario" element={<Listagem/>}></Route>
         <Route path="putusuario" element={<Update/>}></Route>
         <Route path="deleteusuario" element={<Delete/>}></Route>

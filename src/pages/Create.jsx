@@ -1,7 +1,7 @@
 import { PostUsuario, criarUsuario } from "../services/post";
 import {Form,Button,Container,Col} from "react-bootstrap"
 import {useForm} from "react-hook-form"
-export function Create(){
+const Create=()=>{
     const {register,handleSubmit,formState: {errors}} = useForm()
     
     const onSubmit = async(data)=>{
@@ -65,4 +65,4 @@ export function Create(){
         </Container>
     )
 }
-  
+export default Create
