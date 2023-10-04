@@ -10,6 +10,7 @@ import AuthHome from './auth/AuthHome';
 import App from './App';
 import ProtectedRoute from './util/ProtectedRoute';
 import Home from './pages/Home';
+import Create from './pages/Create';
 import { CreateLivros } from './pages/CreateLivros';
 import { ListagemLivros } from './pages/ListLivros';
 import { UpdateLivros } from './pages/UpdateLivros';
@@ -18,14 +19,12 @@ import { Listagem } from './pages/List';
 import { Update } from './pages/Update';
 import { Delete } from './pages/Delete';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={'/'}>
     <Routes>
         <Route path='/auth' element={<Auth />}>
-            <Route path='authhome' element={<AuthHome />} />
             <Route path='login' element={<Login />} />
         </Route>
         <Route path="/" element={<App />}>
@@ -40,8 +39,9 @@ root.render(
         <Route path="getlivro" element={<ListagemLivros/>}></Route>
         <Route path="putlivro" element={<UpdateLivros/>}></Route>
         <Route path="deletelivro" element={<DeleteLivros/>}></Route>
+        <Route path="createUsuario" element={<Create/>}></Route>
         <Route path="getusuario" element={<Listagem/>}></Route>
-        <Route path="putusuario" element={<Update/>}></Route>
+        <Route path="putusuario/:id" element={<Update/>}></Route>
         <Route path="deleteusuario" element={<Delete/>}></Route>
         </Route>
         

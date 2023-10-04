@@ -22,7 +22,6 @@ const PortalNavbar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link>
-                                <Button variant="link" className="link-light link-underline-opacity-0" onClick={logout}>home</Button>
                                 <Button className="btn-light" onClick={login}>Log in</Button>
                             </Nav.Link>
                         </Nav>

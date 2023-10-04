@@ -1,14 +1,15 @@
-
+import { Modal,Card,CardContent } from "@mui/material";
 import {Form,Button,Container,Col} from "react-bootstrap"
 import {useForm} from "react-hook-form"
 import { PostAutor, PostLivro } from "../services/postlivros";
+import { useState } from "react";
 export function CreateLivros(){
     const {register,handleSubmit,formState: {errors}} = useForm()
-    
+    const [openModal, setOpenModal] = useState(false)
     const onSubmit = async(data)=>{
        const criar = await PostLivro(data)
+       setOpenModal(true)
        const autor = await PostAutor(data)
-       const autorfk = await PostAutor(criar.data)
     }
     return(
         <Container>
@@ -60,7 +61,13 @@ export function CreateLivros(){
                     <Button type="submit">Enviar</Button>
                 </Col>
             </Form>
-           
+            <Modal open={openModal} onClose={(e) => setOpenModal(false)}>
+                            <Card>
+                                <CardContent>
+                                    <h2>criado com sucesso</h2>
+                                </CardContent>
+                            </Card>
+                        </Modal>
         </Container>
     )
 }
